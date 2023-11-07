@@ -1,0 +1,13 @@
+# Initialize a Git repository for the development environment
+git init
+git add .
+git commit -m "Initial commit for the development environment"
+
+# Create a new branch for the testing environment
+git checkout -b testing
+git push -u origin testing
+
+# Create a new branch for the production environment
+git checkout -b production
+git push -u origin production
+

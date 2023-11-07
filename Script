@@ -1,0 +1,23 @@
+# .gitlab-ci.yml
+
+stages:
+  - build
+  - test
+
+variables:
+  IMAGE_TAG: "latest"
+
+before_script:
+  - echo "Setting up the environment"
+
+build:
+  stage: build
+  script:
+    - echo "Building the application"
+    - docker build -t myapp:$IMAGE_TAG .
+
+test:
+  stage: test
+  script:
+    - echo "Running tests"
+    - docker run myapp:$IMAGE_TAG npm test
